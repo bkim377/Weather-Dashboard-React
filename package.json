@@ -1,0 +1,32 @@
+{
+  "name": "Weather-Dashboard-React",
+  "version": "1.0.0",
+  "description": "My repository for my redone Weather Dashboard, done in React.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm run start\"",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkim377/Weather-Dashboard-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkim377/Weather-Dashboard-React/issues"
+  },
+  "homepage": "https://github.com/bkim377/Weather-Dashboard-React#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
