@@ -5,7 +5,7 @@ const MainCard = () => {
     return (
         // <div className="container">
         <div className="row">
-            <div className="col-sm-3 card ml-5 mr-3" id="current-day">
+            <div className="col-sm-3 card mx-5" id="current-day">
                 <h3 className="card-title" id="city-name">Alpharetta (6/8/2020)</h3>
                 <img className="mx-auto" id="current-icon" alt="Current Weather" src="https://openweathermap.org/img/wn/04d@2x.png"></img>
                 <p className="card-text" id="city-temp">Temperature: 82.56 °F</p>
