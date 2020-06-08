@@ -12,7 +12,7 @@ const Jumbotron = () => {
         <p></p>
         <div id="city-section">
         <form className="form-inline" id="city-form">
-        <div className="form-group mx-sm-3 mb-2">
+        <div className="form-group mx-auto">
           <label for="citySearchBar" className="mr-2">Search for a City:  </label>
           <input type="text" className="form-control" id="city-search-bar" placeholder="Enter city name" />
           <button type="submit"><i className="fa fa-search"></i></button>
