@@ -1,6 +1,9 @@
 h3 {
     margin-top: 15px;
 }
+#current-day {
+    background-image: linear-gradient(white, skyblue);
+}
 
 #current-icon {
     width: 100px;
@@ -10,6 +13,13 @@ h3 {
     margin-bottom: 15px;
 }
 
-/* .card .col-sm-9 {
-    float: right;
-} */
+#day-1, #day-2, #day-3, #day-4, #day-5 {
+    background-image: linear-gradient(skyblue, blue);
+    color: white;
+    padding: 10px;
+}
+
+
+#future-icons-1 {
+    width: 60px;
+}
