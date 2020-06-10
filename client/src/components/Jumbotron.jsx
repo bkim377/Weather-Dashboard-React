@@ -1,7 +1,35 @@
 import React, {Component} from "react";
 import "./Jumbotron.css";
+import API from "../utils/API.jsx";
 
 class Jumbotron extends React.Component {
+  state = {
+    result: {},
+    search: ""
+};
+
+  // search for a city in the search bar
+  searchCity = query => {
+      API.search(query)
+        .then(res => this.setState({ result: res.data }))
+        .catch(err => console.log(err));
+    };
+
+  // for entering text in the search bar
+  handleInputChange = event => {
+      const value = event.target.value;
+      const name = event.target.name;
+      this.setState({
+        [name]: value
+      });
+    };
+
+  // When the form is submitted, search the OpenWeather API for the value of `this.state.search`
+  handleFormSubmit = event => {
+      event.preventDefault();
+      this.searchMovies(this.state.search);
+  };
+
   render() {  
   return ( 
     <div className="jumbotron jumbotron-responsive">
