@@ -2,11 +2,13 @@ import React, {Component} from "react";
 import "./Jumbotron.css";
 import API from "../utils/API.jsx";
 
-class Jumbotron extends React.Component {
+var cities = [];
+var lastEnteredCity = "";
+class Jumbotron extends Component {
   state = {
     result: {},
     search: ""
-};
+  };
 
   // search for a city in the search bar
   searchCity = query => {
@@ -27,7 +29,7 @@ class Jumbotron extends React.Component {
   // When the form is submitted, search the OpenWeather API for the value of `this.state.search`
   handleFormSubmit = event => {
       event.preventDefault();
-      this.searchMovies(this.state.search);
+      this.searchCity(this.state.search);
   };
 
   render() {  
@@ -48,7 +50,7 @@ class Jumbotron extends React.Component {
         </div> 
         </form>
         </div>
-        {/* <ul id="city-list"></ul> */}
+        <ul id="city-list"></ul>
     </div>
     );
   };
