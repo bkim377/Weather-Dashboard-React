@@ -15,7 +15,7 @@ class Dashboard extends Component {
             <Col size="md-4">
             <MainCard />
             </Col>
-            <Col size="sm-8">
+            <Col size="md-7">
             <WeeklyForecast />
             </Col>
             </Row>

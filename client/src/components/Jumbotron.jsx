@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./Jumbotron.css";
+import "./css/Jumbotron.css";
 import API from "../utils/API.jsx";
 
 var cities = [];
