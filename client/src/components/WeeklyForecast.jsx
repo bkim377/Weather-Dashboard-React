@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import moment from "moment";
 import "./css/MainCard.css";
 import FutureWeather from "./FutureWeather";
 

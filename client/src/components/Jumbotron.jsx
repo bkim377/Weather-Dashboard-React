@@ -1,38 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import "./css/Jumbotron.css";
-import API from "../utils/API.jsx";
 
-var cities = [];
-var lastEnteredCity = "";
-class Jumbotron extends Component {
-  state = {
-    result: {},
-    search: ""
-  };
-
-  // search for a city in the search bar
-  searchCity = query => {
-      API.search(query)
-        .then(res => this.setState({ result: res.data }))
-        .catch(err => console.log(err));
-    };
-
-  // for entering text in the search bar
-  handleInputChange = event => {
-      const value = event.target.value;
-      const name = event.target.name;
-      this.setState({
-        [name]: value
-      });
-    };
-
-  // When the form is submitted, search the OpenWeather API for the value of `this.state.search`
-  handleFormSubmit = event => {
-      event.preventDefault();
-      this.searchCity(this.state.search);
-  };
-
-  render() {  
+function Jumbotron(props) {
   return ( 
     <div className="jumbotron jumbotron-responsive">
         <div className="page-header">
@@ -45,8 +14,15 @@ class Jumbotron extends Component {
         <form className="form-inline" id="city-form">
         <div className="form-group mx-auto">
           <label htmlFor="citySearchBar" className="mr-2">Search for a City:  </label>
-          <input type="text" className="form-control" id="city-search-bar" placeholder="Enter city name" />
-          <button type="submit"><i className="fa fa-search"></i></button>
+          <input 
+          onChange={props.handleInputChange}
+          value={props.value}
+          name="search"
+          type="text" 
+          className="form-control" 
+          id="city-search-bar" 
+          placeholder="Enter city name" />
+          <button onClick={props.handleFormSubmit} className="btn btn-primary"><i className="fa fa-search"></i></button>
         </div> 
         </form>
         </div>
@@ -54,6 +30,5 @@ class Jumbotron extends Component {
     </div>
     );
   };
-};
 
 export default Jumbotron;
